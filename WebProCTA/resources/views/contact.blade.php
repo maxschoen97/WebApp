@@ -72,6 +72,30 @@
             background-color: rgba(155, 9, 9);
 
         }
+
+        .containerLs {
+
+            width: 60vw;
+            margin: 50px auto;
+            text-align: left;
+        }
+
+        .containerLs.h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .containerLs.p {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .containerLs img{
+            display: block;
+            margin: 0 auto;
+            width: 50%;
+        }
+
     </style>
 </head>
 <body>
@@ -89,6 +113,14 @@
     </div>
 </div>
 
+<div class="containerLs">
+    <h1>Meet our team</h1>
+
+    <p>The Laboratorio di Via Etnea is a group of former Erasmus students from Catania who discovered their passion for Sicilian cuisine during their study abroad experience. The team has since honed their skills and developed an expertise in the local flavors and traditional techniques of the region.
+        <br>
+        Their favorite restaurants in Catania are Vermut and Vicolo, which have inspired many of their dishes. The Laboratorio di Via Etnea is now excited to bring their unique blend of traditional and modern Sicilian cuisine to the US, showcasing the rich culinary heritage of their beloved Catania to a wider audience.</p>
+    <img src="{{ asset('/images/meet_the_team.jpg') }}">
+</div>
 
 
 </body>

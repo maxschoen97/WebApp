@@ -44,8 +44,25 @@ Route::controller(App\Http\Controllers\ImageController::class)->group(function()
     Route::post('/upload-image', 'storeImage')->name('image.store');
 });
 
-Route::post('/product', [ProductController::class, 'store']);
+// Show the product list
+Route::get('/product', [ProductController::class, 'index']);
 
+// Show the form to create a new product
 Route::get('/product/create', function () {
     return view('create');
 });
+
+// Store a new product in the database
+Route::post('/product', [ProductController::class, 'store']);
+
+
+/*
+Route::post('/product', [ProductController::class, 'store']);
+
+//Route::match(['get', 'post'], '/product', [ProductController::class, 'store']);
+
+
+Route::get('/product/create', function () {
+    return view('product');
+});
+**/

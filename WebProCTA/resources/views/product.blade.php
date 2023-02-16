@@ -157,6 +157,7 @@
 @foreach($data as $product)
 <div class="product-container">
     <div class="product-image">
+
         <img src="{{ asset($product->image_path) }}">
     </div>
     <div class="product-info">
