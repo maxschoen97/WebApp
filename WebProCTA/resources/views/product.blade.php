@@ -150,23 +150,79 @@
 </div>
 
 <div class="containerHead">
+    <h1>Our small bites</h1>
+    <h2>Starter</h2>
+</div>
+
+@foreach($data as $product)
+    @if($product->id >= 1 && $product->id <= 99)
+        <div class="product-container">
+            <div class="product-image">
+
+                <img src="{{ asset($product->image_path) }}">
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">{{$product->name}}</h2>
+                <p class="product-description">{{$product->description_txt}}</p>
+                <p class="product-price">$ {{$product->price}}</p>
+                <!---<button class="add-to-cart">Add to Cart</button>-->
+
+                @endif
+
+
+            </div>
+        </div>
+        @endforeach
+
+<div class="containerHead">
     <h1>Our finest treats</h1>
     <h2>Main dishes</h2>
 </div>
 
 @foreach($data as $product)
-<div class="product-container">
-    <div class="product-image">
-        <img src="{{ asset($product->image_path) }}">
-    </div>
+    @if($product->id >= 100 && $product->id <= 1000)
+    <div class="product-container">
+        <div class="product-image">
+
+            <img src="{{ asset($product->image_path) }}">
+        </div>
     <div class="product-info">
         <h2 class="product-name">{{$product->name}}</h2>
         <p class="product-description">{{$product->description_txt}}</p>
         <p class="product-price">$ {{$product->price}}</p>
         <!---<button class="add-to-cart">Add to Cart</button>-->
+
+        @endif
+
+
     </div>
 </div>
 @endforeach
+
+    <div class="containerHead">
+        <h1>Our dolce vita</h1>
+        <h2>Dessert</h2>
+    </div>
+
+    @foreach($data as $product)
+        @if($product->id >= 1000 && $product->id <= 100000)
+            <div class="product-container">
+                <div class="product-image">
+
+                    <img src="{{ asset($product->image_path) }}">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-name">{{$product->name}}</h2>
+                    <p class="product-description">{{$product->description_txt}}</p>
+                    <p class="product-price">$ {{$product->price}}</p>
+                    <!---<button class="add-to-cart">Add to Cart</button>-->
+
+                    @endif
+
+
+                </div>
+            </div>
+            @endforeach
 </body>
 
 

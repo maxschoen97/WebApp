@@ -25,17 +25,23 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+
+
+        $validatedData = $request->validate([
+            'id' => 'required|int|min:1',
+            'name' => 'required|string|max:255',
+            'description_txt' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'image_path' => 'string|max:255',
+        ]);
         // Store image file in storage
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $path = $image->store('public/images');
-        }
+
         $product = new Product;
         $product->id = $request->id;
         $product->name = $request->name;
         $product->description_txt = $request->description_txt;
         $product->price = $request->price;
-        $product->image_path = $request->$path;
+        $product->image_path = $request->image_path;
         $product->save();
 
         return redirect('/product');

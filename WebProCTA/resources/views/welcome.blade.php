@@ -81,7 +81,7 @@
 
         @include('navBar')
 
-        <div class="background">
+        <div class="background" >
 
 
             <h1>Laboratorio di Via Etnea</h1>
