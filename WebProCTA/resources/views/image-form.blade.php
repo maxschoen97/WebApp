@@ -22,6 +22,7 @@
                 <strong>{{$message}}</strong>
             </div>
             <img src="{{ asset('images/'.Session::get('image')) }}" />
+            <P></P>
         @endif
 
         <form method="POST" action="{{ route('image.store') }}" enctype="multipart/form-data">

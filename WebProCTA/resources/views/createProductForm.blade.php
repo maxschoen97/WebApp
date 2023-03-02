@@ -13,7 +13,7 @@
 <form class="form-container" method="POST" action="/product" >
     <h1 class="text-center">Product Upload</h1>
     @csrf
-    <label for="name">ID</label>
+    <label for="name">ID(Starter (0-99), Main (100-999), Dessert(1000+)</label>
     <input class="form-input" type="number" name="id" ><br>
 
 
@@ -26,10 +26,10 @@
     <label for="price">Price</label>
     <input class="form-input"  type="number" step="any" name="price" ><br>
 
-    <label for="image_path">Image Path</label>
-    <input class="form-input"  type="text" name="image_path" value="storage/images/arancino_ragu.jpg"><br>
+    <label for="image_path">Image Path(Upload the Image first)</label>
+    <input class="form-input"  type="text" name="image_path" value="/images/image_name.jpg"><br>
     <button class="form-button" type="submit">Save</button>
 
-    <button class="form-button"  href="https://example.com" target="_blank">See Image</button>
+    <button class="form-button"  target="_blank">See Image</button>
 
 </form>

@@ -17,7 +17,7 @@ class ImageController extends Controller
     public function storeImage(Request $request)
     {
         $request->validate([
-            'image' => 'required|image|mimes:png,jpg,jpeg|max:2048'
+            'image' => 'required|image|mimes:png,jpg,jpeg|max:20480'
         ]);
 
         $imageName = time().'.'.$request->image->extension();
@@ -25,16 +25,8 @@ class ImageController extends Controller
         // Public Folder
         $request->image->move(public_path('images'), $imageName);
 
-        // //Store in Storage Folder
-        // $request->image->storeAs('images', $imageName);
-
-        // // Store in S3
-        // $request->image->storeAs('images', $imageName, 's3');
-
-        //Store IMage in DB
-
-
-        return back()->with('success', 'Image uploaded Successfully!')
+        //Store IMage
+        return back()->with('success', $imageName)
             ->with('image', $imageName);
     }
 
